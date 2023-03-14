@@ -5,7 +5,9 @@ import com.evaluacion.model.Phone;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
-
+/**
+ * Mapper para mapear de los dtos de Phone para requests/responses a la entity Phone
+ */
 @Mapper(unmappedTargetPolicy = ReportingPolicy.WARN)
 public interface UserPhoneMapper {
 

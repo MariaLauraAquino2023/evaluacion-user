@@ -17,6 +17,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+/**
+ * Servicio para ABM de la entidad Usuario
+ */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -39,6 +42,12 @@ public class UserServiceImpl implements UserService {
         return userRepository.findById(id).orElse(null);
     }
 
+    /**
+     * Realiza validaciones de los datos del usuario que se quiere dar de alta.
+     * Lo persiste en la base de datos.
+     * @param CreateUserRequest req
+     * @return CreateUserResponse res
+     */
     @Override
     public CreateUserResponse createUser(CreateUserRequest createUserReq) {
         CreateUserResponse response = new CreateUserResponse();

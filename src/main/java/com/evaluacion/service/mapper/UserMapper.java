@@ -8,6 +8,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
+/**
+ * Mapper para mapear de los dtos de user para requests/responses a la entity User
+ */
 @Mapper(unmappedTargetPolicy = ReportingPolicy.WARN,
 		collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED,
 		uses = UserPhoneMapper.class)

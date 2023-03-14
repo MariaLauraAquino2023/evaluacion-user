@@ -11,10 +11,21 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 import java.util.Map;
 
+/**
+ * Clase para generacion de JWT,extraccion de datos y verificacion de expiración.
+ */
 @Component
 public class JWTUtil {
     @Autowired
     SecurityProperties securityProperties;
+
+    /**
+     * Genera un JWT, a partir de un subject (username). El tiempo de expiracion en minutos se obtiene
+     * de SecurityProperties.
+     * @param Map<String,Object> claims
+     * @param String Subject
+     * @return String token
+     */
     public String generateToken(Map<String, Object> claims, String subject){
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + (1000 * 60 * securityProperties.getTokenValidityInMinutes())))

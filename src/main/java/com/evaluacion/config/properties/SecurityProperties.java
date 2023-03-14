@@ -1,6 +1,8 @@
 package com.evaluacion.config.properties;
 
-
+/**
+ * Properties utilizadas para jwt
+ */
 public class SecurityProperties {
     private String jwtSignatureKey;
     private Integer tokenValidityInMinutes;

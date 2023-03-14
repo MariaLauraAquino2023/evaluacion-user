@@ -11,11 +11,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Controlador para ABM de Usuario
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
+
+    /**
+     * Crea un usuario si su email no está registrado.Retorna un JWT dentro de la response
+     * entre otros datos.
+     * @param CreateUserRequest req
+     * @return ResponseEntity<CreateUserResponse> res
+     */
     @PostMapping("/register")
     public ResponseEntity<CreateUserResponse> registerUser(@RequestBody CreateUserRequest request) {
         CreateUserResponse response = userService.createUser(request);
