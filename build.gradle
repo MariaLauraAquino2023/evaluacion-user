@@ -34,9 +34,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-group = 'com.bluebs'
+group = 'com.evaluacion'
 version = '0.0.1-SNAPSHOT'
-description = 'productos'
+description = 'user'
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 publishing {

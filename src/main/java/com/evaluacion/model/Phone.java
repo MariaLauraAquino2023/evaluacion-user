@@ -23,7 +23,7 @@ public class Phone {
 	private String number;
 
 	@Column(name = "user_id")
-	private String userId;
+	private UUID userId;
 
 	public UUID getId() {
 		return id;
@@ -53,11 +53,11 @@ public class Phone {
 
 	public void setNumber(String number){this.number = number;}
 
-	public String getUserId() {
+	public UUID getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(UUID userId) {
 		this.userId = userId;
 	}
 }
